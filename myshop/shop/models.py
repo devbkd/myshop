@@ -2,6 +2,8 @@ from django.db import models
 
 
 class Category(models.Model):
+    """Model representing a category."""
+
     name = models.CharField(max_length=200, verbose_name='Название')
     slug = models.SlugField(max_length=200, verbose_name='Идентификатор')
     description = models.TextField(verbose_name='Описание')
@@ -19,6 +21,8 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    """Model representing a product."""
+
     category = models.ForeignKey(
         Category, related_name='products', on_delete=models.CASCADE
     )
