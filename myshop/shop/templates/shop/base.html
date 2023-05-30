@@ -21,11 +21,11 @@
             {% comment %} {{ total_items }} {% endcomment %}
             {{ cart.get_total_price }} ₽
           </a>
-        {% else %}
+        {% elif not order %}
           Ваша корзина пуста.
         {% endif %}
       {% endwith %}
-    </div>
+    </div>    
    </div>
    <div id="content">
     {% block content %}
