@@ -1,5 +1,5 @@
 from decimal import Decimal
-from django.conf.settings import CART_SESSION_ID
+from django.conf import settings
 from shop.models import Product
 
 
@@ -7,10 +7,10 @@ class Cart:
     def __init__(self, request):
         """Инициализировать корзину."""
         self.session = request.session
-        cart = self.session.get(CART_SESSION_ID)
+        cart = self.session.get(settings.CART_SESSION_ID)
         if not cart:
             # сохранить пустую корзину в сеансе
-            cart = self.session[CART_SESSION_ID] = {}
+            cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
 
     def add(self, product, quantity=1, override_quantity=False):
@@ -69,5 +69,5 @@ class Cart:
 
     def clear(self):
         # удалить корзину из сеанса
-        del self.session[CART_SESSION_ID]
+        del self.session[settings.CART_SESSION_ID]
         self.save()
