@@ -1,5 +1,6 @@
 {% extends "shop/base.html" %}
 {% load static %}
+
 {% block title %}
   Ваша Корзина
 {% endblock %}
@@ -47,7 +48,7 @@
         {% endwith %}
       {% endfor %}
       <tr class="total">
-        <td>Общий</td>
+        <td>Общее</td>
         <td colspan="4"></td>
         <td class="num">{{ cart.get_total_price }} ₽</td>
       </tr>
@@ -55,6 +56,6 @@
   </table>
   <p class="text-right">
     <a href="{% url "shop:product_list" %}" class="button light">Продолжить покупки</a>
-    <a href="#" class="button">Проверить</a>
+    <a href="{% url "orders:order_create" %}" class="button">Проверить</a>
   </p>
 {% endblock %}
