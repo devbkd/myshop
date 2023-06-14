@@ -30,8 +30,8 @@ class Product(models.Model):
     category = models.ForeignKey(
         Category, related_name='products', on_delete=models.CASCADE
     )
-    name = models.CharField(max_length=200, verbose_name='Название')
-    slug = models.SlugField(max_length=200, verbose_name='Идентификатор')
+    name = models.CharField(max_length=150, verbose_name='Название')
+    slug = models.SlugField(max_length=150, verbose_name='Идентификатор')
     image = models.ImageField(
         upload_to='products/%Y/%m/%d', blank=True, verbose_name='Изображение'
     )
