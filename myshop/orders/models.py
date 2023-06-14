@@ -1,4 +1,5 @@
 from django.db import models
+
 from shop.models import Product
 
 
@@ -24,6 +25,8 @@ class Order(models.Model):
         indexes = [
             models.Index(fields=['-created']),
         ]
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
 
     def __str__(self):
         return f'Order {self.id}'
@@ -51,6 +54,10 @@ class OrderItem(models.Model):
     quantity = models.PositiveIntegerField(
         default=1, verbose_name='Количество'
     )
+
+    class Meta:
+        verbose_name = 'Заказать товар'
+        verbose_name_plural = 'Заказать товары'
 
     def __str__(self):
         return str(self.id)
