@@ -11,11 +11,11 @@ WORKPLACE — онлайн-платформа для розничной торг
 ### Как развернуть проект локально:
 Клонируйте репозиторий:
 ```
-     git clone https://github.com/Ruzal-Z/myshop.git
+     git clone https://github.com/devbkd/myshop.git
 ```
 или используйте SSH-ключ:
 ```
-     git clone git@github.com:Ruzal-Z/myshop.git
+     git clone git@github.com:devbkd/myshop.git
 ```
 Установить и активировать виртуальную среду
 ```
@@ -42,4 +42,4 @@ WORKPLACE — онлайн-платформа для розничной торг
 Откройте в своем браузере `localhost` или `127.0.0.1:8000`
 
 ## Автор:
-Рузал Закиров [GitHub](https://github.com/Ruzal-Z/)
+Рузал Закиров [GitHub](https://github.com/devbkd/)
